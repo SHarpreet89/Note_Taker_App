@@ -31,6 +31,7 @@ app.get('/api/notes', (req, res) => {
   res.json(notesDB)
 });
 
+// Route to generate new notes
 app.post('/api/notes', (req, res) => {
   const newNote = req.body;
   newNote.id = uuid(); // Generate and assign a unique ID to the new note
@@ -45,6 +46,7 @@ app.post('/api/notes', (req, res) => {
   });
 });
 
+// Route to delete the notes
 app.delete('/api/notes/:id', (req, res) => {
   const noteId = req.params.id;
   const noteIndex = notesDB.findIndex(note => note.id === noteId);
