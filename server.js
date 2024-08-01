@@ -4,9 +4,9 @@ const notesDB = require('./db/db.json')
 const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
-
 const app = express();
 
+// Function to create Unique ID's for the notes.
 const uuid = () => {
   return Math.floor((1 + Math.random()) * 0x10000)
     .toString(16)
